@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!-- Code and design by Marco Fantauzzo -->
+<html lang="it" itemscope itemtype="https://schema.org/WebApplication">
+    <head>
+        <meta charset="UTF-8">
+        <title>Marco Fantauzzo - World Adventure</title>
+        <meta name="application-name" content="World Adventure">
+        <meta name="theme-color" content="#205819">
+        <meta name="description" content="Un gioco dell'oca digitale in salsa scout">
+        <meta name="keywords" content="FSE, scout, game">
+        <meta name="author" content="Marco Fantauzzo">
+        <link rel="author" href="https://marco97pa.github.io/">
+        <link rel="icon" sizes="192x192" href="/assets/fse.png">
+        <link rel="apple-touch-icon" href="/assets/fse.png">
+        <meta property="og:title" content="World Adventure">
+        <meta property="og:image" content="/assets/fse.png">
+        <meta property="og:description" content="Un gioco dell'oca digitale in salsa scout">
+        <meta itemprop="name" content="World Adventure">
+        <meta itemprop="description" content="Un gioco dell'oca digitale in salsa scout">
+        <meta itemprop="image" content="/assets/fse.png">
+        <meta itemprop="autor" content="Marco Fantauzzo">
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,500;0,700;1,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <div id="overlay" onclick="hide()">
+            <video width="250px" id="load" autoplay loop>
+                <source src="assets/dice.webm" type="video/webm">
+                Sto lanciando il dado...
+            </video>
+            <p id="name"></p>
+            <p id="number"></p>
+        </div>
+        <dialog id="modal">
+            <h3>Questa casella contiene:</h3>
+            <h1 id="desc">description</h1>
+            <div class="actions">
+              <button onclick="closeDescription()">Chiudi</button>
+            </div>
+        </dialog>
+        <div class="sidenav">
+            <p id="title">Menu</p>
+            <span><p>Risposta</p>
+                <button type="button" class="snd" onclick="sound('win')">giusta</button>
+                <button type="button" class="snd" onclick="sound('lose')">errata</button>
+            </span>
+            <span>Giocatori 
+                <button type="button" class="add" onclick="addPlayer()">+</button>
+            </span>
+            <div id="players">
+                <button style="background-color: red;" onclick="rollDice(1)"></button>
+                <button style="background-color: orange;" onclick="rollDice(2)"></button>
+                <button style="background-color: gold;" onclick="rollDice(3)"></button>
+                <button style="background-color: lightseagreen;" onclick="rollDice(4)"></button>
+                <button style="background-color: limegreen;" onclick="rollDice(5)"></button>
+                <button style="background-color: mediumturquoise;" onclick="rollDice(6)"></button>
+                <button style="background-color: navy;" onclick="rollDice(7)"></button>
+                <button style="background-color: hotpink;" onclick="rollDice(8)"></button>
+                <button style="background-color: darkviolet;" onclick="rollDice(9)"></button>
+                <button style="background-color: chocolate;" onclick="rollDice(10)"></button>
+                <button style="background-color: brown;" onclick="rollDice(11)"></button>
+                <button style="background-color: gray;" onclick="rollDice(12)"></button>
+            </div>
+        </div>
+        <div class="header">
+            <div class="logo">
+                <a href="https://www.youtube.com/channel/UCnnSXqParYHr_RVrvfeyMRA"><img src="assets/pattuglia_tecnica.png"/></a>
+                <a href="https://fse.it/"><img src="assets/fse.png"/></a>
+            </div>
+            <h1>World Adventure</h1>
+            <h3>Giocare il gioco... nel web</h3>
+            <h5>Interfaccia realizzata da <a href="https://marco97pa.github.io/">Marco Fantauzzo </a>(Lepre Riflessiva)</h5>
+        </div>
+
+        <div class="board" id="board">
+
+        </div>
+
+        <script src="game.js"></script>
+        <script>
+            //Genera 50 caselle
+            generate(50);
+            //Imposta descrizioni caselle
+            var coord = ["0°26'13''S 36°57'28''W","25°51'21''S 25°38'25''W","50°41'29''N 1°58'26''W","51°29'43''N 0°10'45''W","48°51'30''N 2°17'40''W","37°45'09''N 15°00'24''E","37°53'00''N 13°22'33''E","17°35'18''N  9°45'13''E","27°59'18''N 86°55'29''E","24°29'15''S 46°40'27''W","3°27'54''S 62°12'56''W","45°47'23''N 7°28'42''E","43°46'49''N 11°15'03''E","45°28'02''N  9°11'22''E","42°26'04''N  12°11'37''E","41°54'08''N 12°27'12''E","RIDICULUS","0°26'13''S 36°57'28''W","25°51'21''S 25°38'25''W","50°41'29''N 1°58'26''W","51°29'43''N 0°10'45''W","48°51'30''N 2°17'40''W","37°45'09''N 15°00'24''E","37°53'00''N 13°22'33''E","17°35'18''N  9°45'13''E","27°59'18''N 86°55'29''E","24°29'15''S 46°40'27''W","3°27'54''S  62°12'56''W","45°47'23''N  7°28'42''E","43°46'49''N 11°15'03''E","45°28'02''N  9°11'22''E","42°26'04''N 12°11'37''E","41°54'08''N 12°27'12''E","RIDICULUS","0°26'13''S 36°57'28''W","25°51'21''S 25°38'25''W","50°41'29''N 1°58'26''W","51°29'43''N 0°10'45''W","48°51'30''N 2°17'40''W","37°45'09''N 15°00'24''E","37°53'00''N 13°22'33''E","17°35'18''N  9°45'13''E","27°59'18''N 86°55'29''E","24°29'15''S 46°40'27''W","3°27'54''S 62°12'56''W","45°47'23''N 7°28'42''E","43°46'49''N 11°15'03''E","45°28'02''N  9°11'22''E","42°26'04''N  12°11'37''E","41°54'08''N 12°27'12''E"];
+            setDescription(coord);
+        </script>
+    </body>
+</html>

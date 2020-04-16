@@ -1,0 +1,490 @@
+.sidenav {
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    top: 0px;
+    left: 0px;
+    background: rgb(51, 51, 51);
+    overflow-x: hidden;
+    padding: 16px 12px;
+    border-radius: 3px;
+    color: #fafafa;
+  }
+
+button {
+    font-size: 12px;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+.add {
+    color: #fafafa;
+    border-radius: 60px;
+    font-size: 20px;
+    padding: 0;
+    background-color: crimson;
+    width: 32px;
+    height: 32px;
+    display: inline;
+    float: right;
+}
+
+.snd {
+    color: #fafafa;
+    border-radius: 60px;
+    font-size: 12px;
+    padding: 0;
+    background-color: cornflowerblue;
+    width: 50px;
+    height: 100%;
+    display: inline;
+}
+
+.sidenav #title{
+    margin-top: -3px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    text-align: center;
+    font-weight: 200;
+}
+
+.sidenav span{
+    line-height: 32px;
+    height: 32px;
+    margin-bottom: 8px;
+}
+
+.sidenav span p{
+    margin-bottom: -10px;
+    margin-top: 5px;
+}
+
+#players button{
+    display: none;
+    width: 100%;
+    border-radius: 60px;
+}
+
+.header{
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.board {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(8, 10vw);
+    grid-template-rows: repeat(15, 10vw);
+    padding: 0.5em 0;
+    margin-bottom: 5em;
+  }
+  
+  .square:nth-child(1) {
+    grid-row: 1;
+    grid-column: 2;
+  }
+  
+  .square:nth-child(2) {
+    grid-row: 1;
+    grid-column: 3;
+  }
+  
+  .square:nth-child(3) {
+    grid-row: 1;
+    grid-column: 4;
+  }
+  
+  .square:nth-child(4) {
+    grid-row: 1;
+    grid-column: 5;
+  }
+  
+  .square:nth-child(5) {
+    grid-row: 1;
+    grid-column: 6;
+  }
+  
+  .square:nth-child(6) {
+    grid-row: 1;
+    grid-column: 7;
+  }
+  
+  .square:nth-child(7) {
+    grid-row: 1;
+    grid-column: 8;
+  }
+  
+  .square:nth-child(8) {
+    grid-row: 2;
+    grid-column: 8;
+  }
+  
+  .square:nth-child(9) {
+    grid-row: 3;
+    grid-column: 8;
+  }
+  
+  .square:nth-child(10) {
+    grid-row: 3;
+    grid-column: 7;
+  }
+  
+  .square:nth-child(11) {
+    grid-row: 3;
+    grid-column: 6;
+  }
+  
+  .square:nth-child(12) {
+    grid-row: 3;
+    grid-column: 5;
+  }
+  
+  .square:nth-child(13) {
+    grid-row: 3;
+    grid-column: 4;
+  }
+  
+  .square:nth-child(14) {
+    grid-row: 4;
+    grid-column: 4;
+  }
+  
+  .square:nth-child(15) {
+      grid-row: 5;
+      grid-column: 4;
+    }
+  
+  .square:nth-child(16) {
+      grid-row: 5;
+      grid-column: 3;
+    }
+    
+    .square:nth-child(17) {
+        grid-row: 5;
+        grid-column: 2;
+    }
+
+    .square:nth-child(18) {
+        grid-row: 6;
+        grid-column: 2;
+    }
+
+    .square:nth-child(19) {
+        grid-row: 7;
+        grid-column: 2;
+    }
+
+    .square:nth-child(20) {
+        grid-row: 7;
+        grid-column: 3;
+    }
+
+    .square:nth-child(21) {
+        grid-row: 7;
+        grid-column: 4;
+    }
+
+    .square:nth-child(22) {
+        grid-row: 7;
+        grid-column: 5;
+    }
+
+    .square:nth-child(23) {
+        grid-row: 7;
+        grid-column: 6;
+    }
+
+    .square:nth-child(24) {
+        grid-row: 7;
+        grid-column: 7;
+    }
+
+    .square:nth-child(25) {
+        grid-row: 7;
+        grid-column: 8;
+    }
+
+    .square:nth-child(26) {
+        grid-row: 8;
+        grid-column: 8;
+    }
+
+    .square:nth-child(27) {
+        grid-row: 9;
+        grid-column: 8;
+    }
+
+    .square:nth-child(28) {
+        grid-row: 10;
+        grid-column: 8;
+    }
+
+    .square:nth-child(29) {
+        grid-row: 11;
+        grid-column: 8;
+    }
+
+    .square:nth-child(30) {
+        grid-row: 11;
+        grid-column: 7;
+    }
+
+    .square:nth-child(31) {
+        grid-row: 11;
+        grid-column: 6;
+    }
+
+    .square:nth-child(32) {
+        grid-row: 10;
+        grid-column: 6;
+    }
+
+    .square:nth-child(33) {
+        grid-row: 9;
+        grid-column: 6;
+    }
+
+    .square:nth-child(34) {
+        grid-row: 9;
+        grid-column: 5;
+    }
+
+    .square:nth-child(35) {
+        grid-row: 9;
+        grid-column: 4;
+    }
+
+    .square:nth-child(36) {
+        grid-row: 9;
+        grid-column: 3;
+    }
+
+    .square:nth-child(37) {
+        grid-row: 9;
+        grid-column: 2;
+    }
+
+    .square:nth-child(38) {
+        grid-row: 10;
+        grid-column: 2;
+    }
+
+    .square:nth-child(39) {
+        grid-row: 11;
+        grid-column: 2;
+    }
+
+    .square:nth-child(40) {
+        grid-row: 12;
+        grid-column: 2;
+    }
+
+    .square:nth-child(41) {
+        grid-row: 13;
+        grid-column: 2;
+    }
+
+    .square:nth-child(42) {
+        grid-row: 14;
+        grid-column: 2;
+    }
+
+    .square:nth-child(43) {
+        grid-row: 15;
+        grid-column: 2;
+    }
+
+    .square:nth-child(44) {
+        grid-row: 15;
+        grid-column: 3;
+    }
+
+    .square:nth-child(45) {
+        grid-row: 15;
+        grid-column: 4;
+    }
+
+    .square:nth-child(46) {
+        grid-row: 15;
+        grid-column: 5;
+    }
+
+    .square:nth-child(47) {
+        grid-row: 15;
+        grid-column: 6;
+    }
+
+    .square:nth-child(48) {
+        grid-row: 14;
+        grid-column: 6;
+    }
+
+    .square:nth-child(49) {
+        grid-row: 13;
+        grid-column: 6;
+    }
+
+    .square:nth-child(50) {
+        grid-row: 13;
+        grid-column: 5;
+    }
+    .square:nth-child(51) {
+        grid-row: 13;
+        grid-column: 4;
+    }
+    .square:nth-child(52) {
+        grid-row: 12;
+        grid-column: 4;
+    }
+    .square:last-child{
+        border: 5px solid black;
+        font-size: 48px;
+    }
+    .square:first-child{
+        border: 5px solid black;
+        font-size: 48px;
+    }
+  
+  
+  .square {
+    background: #eaeaea;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    border-radius: 12px;
+  }
+
+  #overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: radial-gradient(#000 33%,rgba(0, 0, 0, 0.666));
+    z-index: 2;
+    cursor: pointer;
+    text-align: center;
+  }
+
+  .win{
+    background-image: radial-gradient(rgb(238, 214, 0) 33%,rgba(0, 0, 0, 0.666)) !important;
+  }
+
+  #load{
+    width: 250px;
+    height: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  #name{
+      color: cornsilk;
+      font-size: 3em;
+  }
+
+  #number{
+    color: white;
+    font-size: 12em;
+    margin-top: 0.5em;
+  }
+
+  h1{
+      font-weight: 900;
+      margin-bottom: -0.5em;
+      margin-top: 0;
+      text-transform: uppercase;
+      font-size: 2.5em;
+      color: #f0a13b;
+  }
+  
+  h3{
+      font-weight: 500;
+      color: whitesmoke;
+  }
+
+  h5{
+      font-weight: 300;
+      color: white;
+  }
+
+  a{
+      font-weight: bold;
+      text-decoration: none;
+      color: lightskyblue;
+  }
+
+  .header{
+    padding-top: 6em;
+    background-image: linear-gradient( rgba(32, 88, 25, 0.89), rgba(36, 36, 36, 0));
+  }
+
+  .header .logo{
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 5em;
+    width: auto;
+    padding-right: 8px;
+    padding-top: 5px;
+  }
+
+  .header .logo img, .header .logo a{
+      height: inherit;
+  }
+
+    body{
+        background-image: url("assets/tile2.jpg");
+        background-repeat: repeat;
+        margin: 0;
+    }
+
+    dialog {
+        background-color: rgb(0, 80, 126);
+        color: #fafafa;
+        text-align: center;
+        border: none;
+        padding: 2rem;
+        border-radius: 6px;
+        box-shadow: 0 0 40px rgba(0,0,0,0.1), 0 0 10px rgba(0,0,0,0.25);
+        width: 50em;
+        position: fixed;
+        top: 50%;
+        transform: translate(0, -50%);
+      }
+    
+    dialog #desc {
+        color: wheat;
+    }
+
+    dialog .actions{
+        padding-top: 5em;
+        margin: auto;
+        width: 50%;
+    }
+
+    dialog .actions button{
+        color: black;
+        background-color: lightsalmon;
+        margin: auto;
+    }
+
+  *{
+    font-family: 'Rubik', sans-serif;
+  }
