@@ -23,7 +23,7 @@ function rollDice(id){
     document.getElementById("name").innerHTML = "";
     document.getElementById("number").innerHTML = "";
     sound();
-    setTimeout(function(){
+    increment = setTimeout(function(){
         document.getElementById("load").style.display = "none";
         id = id - 1;
         var board = document.getElementById("board");
@@ -43,7 +43,6 @@ function rollDice(id){
             sound("final");
             document.getElementById("name").innerHTML = player[id].name + " HA VINTO";
             document.getElementById('overlay').classList.add("win");
-            alert(player[id].name + " ha vinto! ");
         }
     }, 3000);
 }
@@ -110,12 +109,29 @@ function generate(length) {
       case "final":
         var audio = new Audio('assets/final.mp3');
       break;
+      case "whistle":
+        var audio = new Audio('assets/whistle.mp3');
+      break;
       case "roll":
       default:
         var audio = new Audio('assets/roll.mp3');
       break;
     }
     audio.play();
+  }
+
+  function timer(){
+    document.getElementById("overlay").style.display = "block";
+    document.getElementById("load").style.display = "block";
+    document.getElementById("load").src = "assets/countdown.gif";
+    document.getElementById("name").innerHTML = "";
+    document.getElementById("number").innerHTML = "";
+    setTimeout(function(){
+      sound("final");
+      document.getElementById("load").style.display = "none";
+      document.getElementById("load").src = "assets/dice.gif";
+      document.getElementById("overlay").style.display = "none";
+    }, 10000);
   }
 
   function getColor(index){
@@ -126,4 +142,5 @@ function generate(length) {
 
   function hide(){
     document.getElementById("overlay").style.display = "none";
+    clearInterval(increment);
   }
