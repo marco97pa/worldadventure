@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!-- Code and design by Marco Fantauzzo -->
+<html lang="it" itemscope itemtype="https://schema.org/WebApplication">
+    <head>
+        <meta charset="UTF-8">
+        <title>Marco Fantauzzo - World Adventure</title>
+        <meta name="application-name" content="World Adventure">
+        <meta name="description" content="Un gioco dell'oca digitale in salsa scout">
+        <meta name="keywords" content="FSE, scout, game">
+        <meta name="author" content="Marco Fantauzzo">
+        <link rel="author" href="https://marco97pa.github.io/">
+        <link rel="icon" sizes="192x192" href="/assets/fse.png">
+        <link rel="apple-touch-icon" href="/assets/fse.png">
+        <meta property="og:title" content="World Adventure">
+        <meta property="og:image" content="/assets/fse.png">
+        <meta property="og:description" content="Un gioco dell'oca digitale in salsa scout">
+        <meta itemprop="name" content="World Adventure">
+        <meta itemprop="description" content="Un gioco dell'oca digitale in salsa scout">
+        <meta itemprop="image" content="/assets/fse.png">
+        <meta itemprop="author" content="Marco Fantauzzo">
+        <meta itemprop="applicationCategory" content="Game">
+        <meta itemprop="operatingSystem" content="Any desktop OS">
+        <link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico">
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,500;0,700;1,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <div id="overlay" onclick="hide()">
+            <img src="assets/dice.gif" id="load"/>
+            <p id="name"></p>
+            <p id="number"></p>
+        </div>
+        <dialog id="modal">
+            <h3>Questa casella contiene:</h3>
+            <h1 id="desc">description</h1>
+            <div class="actions">
+              <button onclick="closeDescription()">Chiudi</button>
+            </div>
+        </dialog>
+        <div class="sidenav">
+            <p id="title">Menu</p>
+            <span><p>Risposta</p>
+                <button type="button" class="snd" onclick="timer()">tempo</button>
+                <button type="button" class="snd" onclick="sound('win')">giusta</button>
+                <button type="button" class="snd" onclick="sound('lose')">errata</button>
+            </span>
+            <span>Giocatori 
+                <button type="button" class="add" onclick="addPlayer()">+</button>
+            </span>
+            <div id="players">
+                <button style="background-color: red;" onclick="rollDice(1)"></button>
+                <button style="background-color: orange;" onclick="rollDice(2)"></button>
+                <button style="background-color: gold;" onclick="rollDice(3)"></button>
+                <button style="background-color: lightseagreen;" onclick="rollDice(4)"></button>
+                <button style="background-color: limegreen;" onclick="rollDice(5)"></button>
+                <button style="background-color: mediumturquoise;" onclick="rollDice(6)"></button>
+                <button style="background-color: navy;" onclick="rollDice(7)"></button>
+                <button style="background-color: hotpink;" onclick="rollDice(8)"></button>
+                <button style="background-color: darkviolet;" onclick="rollDice(9)"></button>
+                <button style="background-color: chocolate;" onclick="rollDice(10)"></button>
+                <button style="background-color: brown;" onclick="rollDice(11)"></button>
+                <button style="background-color: gray;" onclick="rollDice(12)"></button>
+            </div>
+        </div>
+        <div id="header">
+            <div class="logo">
+                <a id="customLogo" href=""><img src=""/></a>
+                <a href="https://fse.it/"><img src="assets/fse.png"/></a>
+            </div>
+            <h1>World Adventure</h1>
+            <h3>Giocare il gioco... nel web</h3>
+            <h5>Interfaccia realizzata da <a href="https://marco97pa.github.io/">Marco Fantauzzo </a>(Lepre Riflessiva)</h5>
+        </div>
+
+        <div class="board" id="board">
+
+        </div>
+
+        <script src="game.js"></script>
+        <script src="assets/costumization.js"></script>
+        <script>
+            //Ritrova argomenti dopo il ? nell'URL
+            x = retrieveArguments();
+            //Genera caselle
+            generate(branca[x].len);
+            //Imposta descrizioni caselle
+            setDescription(branca[x].desc);
+            //Imposta stile sfondo
+            setBackground(branca[x].background);
+            //Imposta colore primario
+            setPrimaryColor(branca[x].color);
+            //Imposta logo secondario
+            setCustomLogo(branca[x].logo, branca[x].link);
+        </script>
+    </body>
+</html>

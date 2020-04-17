@@ -98,6 +98,19 @@ function generate(length) {
     document.getElementById("modal").close();
   }
   
+  function setBackground(style){
+    document.body.style = style;
+  }
+
+  function setCustomLogo(img, link){
+    document.getElementById("customLogo").href = link;
+    document.getElementById("customLogo").children[0].src = img;
+  }
+
+  function setPrimaryColor(color){
+    document.documentElement.style.setProperty("--primary-color", color);
+  }
+
   function sound(name){
     switch(name){
       case "win":
@@ -143,4 +156,14 @@ function generate(length) {
   function hide(){
     document.getElementById("overlay").style.display = "none";
     clearInterval(increment);
+  }
+
+  function retrieveArguments(){
+    var arg = 0;
+    var url = window.location.href;
+    var n = url.lastIndexOf("?") + 1;
+    if(n != 0){
+      arg = url.substr(n);
+    }
+    return arg;
   }

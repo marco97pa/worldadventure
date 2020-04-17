@@ -11,7 +11,7 @@
     color: #fafafa;
   }
 
-button {
+button, a.button {
     font-size: 12px;
     border: none;
     color: white;
@@ -71,7 +71,7 @@ button {
     border-radius: 60px;
 }
 
-.header{
+#header{
     text-align: center;
     margin-bottom: 100px;
 }
@@ -430,12 +430,16 @@ button {
       color: lightskyblue;
   }
 
-  .header{
-    padding-top: 6em;
-    background-image: linear-gradient( rgba(32, 88, 25, 0.89), rgba(36, 36, 36, 0));
+  :root {
+    --primary-color: rgba(0, 0, 0, 0.884);
   }
 
-  .header .logo{
+  #header{
+    padding-top: 6em;
+    background-image: linear-gradient( var(--primary-color), rgba(36, 36, 36, 0));
+  }
+
+  #header .logo{
     position: absolute;
     right: 0;
     top: 0;
@@ -445,13 +449,12 @@ button {
     padding-top: 5px;
   }
 
-  .header .logo img, .header .logo a{
+  #header .logo img, #header .logo a{
       height: inherit;
   }
 
     body{
-        background-image: url("assets/tile2.jpg");
-        background-repeat: repeat;
+        /*Body background definied with setBackground(style) method*/
         margin: 0;
     }
 
@@ -483,6 +486,22 @@ button {
         color: black;
         background-color: lightsalmon;
         margin: auto;
+    }
+
+    #branche{
+        margin: auto; width: 250px;
+    }
+
+    .box{
+        position: absolute; bottom: 0; width: 300px;
+    }
+
+    .right{
+        right: 0; 
+    }
+
+    .left{
+        left: 0;
     }
 
   *{
