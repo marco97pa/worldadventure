@@ -492,16 +492,46 @@ button, a.button {
         margin: auto; width: 250px;
     }
 
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
     .box{
-        position: absolute; bottom: 0; width: 300px;
+        float: left;
+        width: 50%;
+        padding: 10px;
     }
 
     .right{
-        right: 0; 
+        text-align: right;
     }
 
     .left{
-        left: 0;
+       text-align: left;
+    }
+
+    .column {
+        float: left;
+        width: 25%;
+        padding: 10px;
+      }
+    .column ul{
+        list-style-type: none;
+        list-style: none;
+        padding-left: 0;
+    }
+
+    .column ul li{
+        color: rgb(50, 50, 50);
+    }
+
+    @media only screen and (max-width: 768px) {
+        /* For mobile phones: */
+        .column, .box {
+          width: 100%;
+        }
     }
 
   *{
