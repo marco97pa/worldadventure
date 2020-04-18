@@ -1,11 +1,13 @@
 class Branca {
-    constructor(name, len, desc, background, color, logo, link) {
+    constructor(name, len, desc, background, color, logo, link, link_prove, link_allegati) {
       this.name = name;
       this.len = len;
       this.desc = desc;
       this.background = background;
       this.logo = logo;
       this.link = link;
+      this.link_allegati = link_allegati;
+      this.link_prove = link_prove;
       this.color = color;
     }
   }
@@ -19,7 +21,9 @@ branca[0] = new Branca(
     "background-image: url('assets/tile2.jpg'); background-repeat: repeat;",
     "rgba(32, 88, 25, 0.89)",
     "assets/pattuglia_tecnica.png",
-    "https://www.youtube.com/channel/UCnnSXqParYHr_RVrvfeyMRA"
+    "https://www.youtube.com/channel/UCnnSXqParYHr_RVrvfeyMRA",
+    "",
+    "https://www.dropbox.com/sh/rzcwuvesx77yd09/AAAGmOR3HxoE2dY3mcnK8KlZa?dl=0"
 )
 
 /*
@@ -30,6 +34,8 @@ branca[1] = new Branca(
     "background-image: url('assets/tile1.jpg'); background-repeat: repeat;",
     "rgba(136, 4, 4, 0.89)",
     "assets/fse.png",
-    "https://marco97pa.github.io"
+    "https://marco97pa.github.io",
+    "",
+    "https://www.dropbox.com/sh/rzcwuvesx77yd09/AAAGmOR3HxoE2dY3mcnK8KlZa?dl=0"
 )
 */

@@ -517,14 +517,10 @@ button, a.button {
         width: 25%;
         padding: 10px;
       }
-    .column ul{
-        list-style-type: none;
-        list-style: none;
-        padding-left: 0;
-    }
-
-    .column ul li{
-        color: rgb(50, 50, 50);
+    .column .button, .row .button{
+        max-width: 200px;
+        margin: auto;
+        margin-bottom: 5px;
     }
 
     @media only screen and (max-width: 768px) {

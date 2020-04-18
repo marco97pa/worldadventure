@@ -48,38 +48,17 @@
             <p>Scegli la tua branca</p>
 
             <div id="branche">
+                <!-- Generated using addLink() JS -->
             </div>
 
             <br><br>
             <h2>Materiale per i capi</h2>
-            <h3>Per tutte le branche</h3>
-            <a href="" target="_blank">Istruzioni</a>
             <div class="row">
-                <div class="column">
-                    <h3>Esploratori</h3>
-                    <ul>
-                        <li><a href="" target="_blank">Scheda prove</a></li>
-                        <li><a href="https://www.dropbox.com/sh/rzcwuvesx77yd09/AAAGmOR3HxoE2dY3mcnK8KlZa?dl=0" target="_blank">Allegati</a></li>
-                    </ul>
-                </div>
-                <div class="column">
-                    <h3>Guide</h3>
-                    <ul>
-                        <li>presto in arrivo</li>
-                    </ul>
-                </div>
-                <div class="column">
-                    <h3>Rover</h3>
-                    <ul>
-                        <li>presto in arrivo</li>
-                    </ul>
-                </div>
-                <div class="column">
-                    <h3>Lupetti</h3>
-                    <ul>
-                        <li></li>
-                    </ul>
-                </div>
+                <h3>Per tutte le branche</h3>
+                <a href="" class="button" target="_blank" style="background-color: darkslategray;">Istruzioni</a>
+            </div>
+            <div class="row" id="docs">
+                <!-- Generated using addDocs() JS -->
             </div>
             
             <div class="row">
@@ -99,6 +78,8 @@
                 detectBrowser();
                 //Ritrova le branche e aggiungi il link
                 branca.forEach(addLink);
+                //Ritrova le branche e aggiungi la documentazione
+                branca.forEach(addDocs);
 
                 function addLink(item, index) {
                     var link = document.createElement("a");
@@ -113,7 +94,32 @@
                     }
                     document.getElementById("branche").appendChild(link);
                 }
+                
+                function addDocs(item, index){
+                    var column = document.createElement("div");
+                    column.classList.add("column");
+                    document.getElementById("docs").appendChild(column);
 
+                    var header = document.createElement("h3");
+                    header.innerHTML = item.name;
+                    column.appendChild(header)
+
+                    var link_p = document.createElement("a");
+                    link_p.classList.add("button");
+                    link_p.innerHTML = "Scheda prove";
+                    link_p.style.backgroundColor = item.color;
+                    link_p.href = item.link_prove;
+                    link_p.setAttribute('target', '_blank');
+                    column.appendChild(link_p);
+
+                    var link_a = document.createElement("a");
+                    link_a.classList.add("button");
+                    link_a.innerHTML = "Allegati";
+                    link_a.style.backgroundColor = item.color;
+                    link_a.href = item.link_allegati;
+                    link_a.setAttribute('target', '_blank');
+                    column.appendChild(link_a);
+                }
 
                 function detectMobile(){
                     if(isMobile()){
