@@ -22,7 +22,7 @@ branca[0] = new Branca(
     "rgba(32, 88, 25, 0.89)",
     "assets/pattuglia_tecnica.png",
     "https://www.youtube.com/channel/UCnnSXqParYHr_RVrvfeyMRA",
-    "",
+    "https://www.dropbox.com/s/e6f30azszyek5mm/SCHEDA%20PROVE%20E%20SOLUZIONI%20simone%202.xlsx?dl=0",
     "https://www.dropbox.com/sh/rzcwuvesx77yd09/AAAGmOR3HxoE2dY3mcnK8KlZa?dl=0"
 )
 
