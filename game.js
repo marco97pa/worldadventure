@@ -28,7 +28,7 @@ function rollDice(id){
         id = id - 1;
         var board = document.getElementById("board");
         board.children[player[id].pos].style.backgroundColor = "#eaeaea";
-        steps = Math.floor(Math.random() * 5) + 1;
+        steps = Math.floor(Math.random() * 6) + 1;
         document.getElementById("name").innerHTML = player[id].name + " ha ottenuto ";
         document.getElementById("number").innerHTML = steps;
         player[id].pos = player[id].pos + steps;

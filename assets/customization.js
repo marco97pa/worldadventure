@@ -22,7 +22,7 @@ branca[0] = new Branca(
     "rgba(32, 88, 25, 0.89)",
     "assets/esploratori.png",
     "https://scout.fse.it/esploratori/",
-    "https://www.dropbox.com/s/vndt59jewbnq67k/prove%20soluzioni.pdf?dl=0",
+    "https://www.dropbox.com/s/ywqt6qjifxi4cq7/prove%20soluzioni.pdf?dl=0",
     "https://www.dropbox.com/sh/rzcwuvesx77yd09/AAAGmOR3HxoE2dY3mcnK8KlZa?dl=0"
 )
 
